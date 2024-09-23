@@ -33,7 +33,7 @@ jobs:
         ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
       run: terraform apply -auto-approve
 
-    # Step 5: Set up Azure CLI with inlineScript
+    # Step 5: Set up Azure CLI and Fetch AKS Credentials
     - name: Set up Azure CLI and Fetch AKS Credentials
       uses: azure/CLI@v1
       with:
