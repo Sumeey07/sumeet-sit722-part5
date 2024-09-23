@@ -1,7 +1,21 @@
-variable "subscription_id" {
+variable "AZURE_CLIENT_ID" {
+  description = "Azure Client ID"
+  type        = string
+}
+
+variable "AZURE_CLIENT_SECRET" {
+  description = "Azure Client Secret"
+  type        = string
+}
+
+variable "AZURE_SUBSCRIPTION_ID" {
   description = "Azure Subscription ID"
   type        = string
-  default     = "97b6f663-aaa6-48ac-a986-2d311770f67e"
+}
+
+variable "AZURE_TENANT_ID" {
+  description = "Azure Tenant ID"
+  type        = string
 }
 
 variable "resource_group_name" {
