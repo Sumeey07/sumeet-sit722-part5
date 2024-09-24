@@ -35,14 +35,10 @@ jobs:
 
     # Step 5: Set up Azure CLI and Fetch AKS Credentials
     - name: Set up Azure CLI and Fetch AKS Credentials
-      uses: azure/CLI@v1
-      with:
-      azcliversion: latest
-      inlineScript: |
+      run: |
         az login --service-principal -u ${{ secrets.AZURE_CLIENT_ID }} -p ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
         az aks get-credentials --resource-group ${{ secrets.RESOURCE_GROUP_NAME }} --name ${{ secrets.KUBERNETES_CLUSTER_NAME }}
-
-
+      shell: bash
     # Step 6: Build and push Docker images for both microservices
     - name: Build and Push Docker Images
       run: |
